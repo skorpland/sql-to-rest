@@ -18,7 +18,8 @@ export { everyTarget, flattenTargets, someFilter, someTarget } from './util'
  */
 export async function processSql(sql: string): Promise<Statement> {
   try {
-    const result: ParsedQuery = await parseQuery(sql)
+    const result = await parseQuery(sql) as ParsedQuery;
+
 
     if (result.stmts.length === 0) {
       throw new UnsupportedError('Expected a statement, but received none')

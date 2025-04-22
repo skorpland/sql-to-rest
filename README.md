@@ -227,7 +227,7 @@ Host: localhost:54321
 
 ### `renderPowerbaseJs()`
 
-Takes the intermediate `Statement` and renders it as [`powerbase-js`](https://github.com/powerbase/powerbase-js) client code.
+Takes the intermediate `Statement` and renders it as [`powerbase-js`](https://github.com/skorpland/powerbase-js) client code.
 
 ```js
 import { processSql, renderPowerbaseJs } from '@skorpland/sql-to-rest'
@@ -259,7 +259,7 @@ The rendered JS code is automatically formatted using `prettier`.
 
 1. The SQL string is parsed into a PostgreSQL abstract syntax tree (AST) using [`libpg-query-node`](https://github.com/launchql/libpg-query-node), a JavaScript SQL parser that uses C code from the official PostgreSQL codebase (compiled to WASM for browser targets, NAPI for Node targets). Supports Postgres 15 syntax.
 2. The PostgreSQL AST is translated into a much smaller and simpler PostgREST AST. Since PostgREST supports a subset of SQL syntax, any unsupported SQL operation will throw an `UnsupportedError` with a description of exactly what wasn't supported.
-3. The intermediate PostgREST AST can be rendered to your language/protocol of choice. Currently supports HTTP (with `cURL` and raw HTTP formatters), and [`powerbase-js`](https://github.com/powerbase/powerbase-js) code (which wraps PostgREST). Other languages are on the roadmap (PR's welcome!)
+3. The intermediate PostgREST AST can be rendered to your language/protocol of choice. Currently supports HTTP (with `cURL` and raw HTTP formatters), and [`powerbase-js`](https://github.com/skorpland/powerbase-js) code (which wraps PostgREST). Other languages are on the roadmap (PR's welcome!)
 
 ## Roadmap
 
@@ -366,9 +366,9 @@ JSON columns (eg. `select metadata->'person'->>'name'`) are supported in the fol
 - [x] HTTP
   - [x] cURL formatter
   - [x] Raw HTTP formatter
-- [x] [`powerbase-js`](https://github.com/powerbase/powerbase-js)
-- [ ] [`powerbase-flutter`](https://github.com/powerbase/powerbase-flutter)
-- [ ] [`powerbase-swift`](https://github.com/powerbase/powerbase-swift)
+- [x] [`powerbase-js`](https://github.com/skorpland/powerbase-js)
+- [ ] [`powerbase-flutter`](https://github.com/skorpland/powerbase-flutter)
+- [ ] [`powerbase-swift`](https://github.com/skorpland/powerbase-swift)
 - [ ] [`powerbase-py`](https://github.com/powerbase-community/powerbase-py)
 - [ ] [`powerbase-csharp`](https://github.com/powerbase-community/postgrest-csharp)
 - [ ] [`powerbase-kt`](https://github.com/powerbase-community/powerbase-kt)

@@ -76,7 +76,8 @@ async function formatSelect(select: Select): Promise<PowerbaseJsQuery> {
   // Join lines together and format
   const code = await prettier.format(lines.join('\n'), {
     parser: 'babel',
-    plugins: [babel, estree],
+    plugins: [babel as any, estree as any],
+
     printWidth: 40,
     semi: false,
     singleQuote: true,
